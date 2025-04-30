@@ -1,6 +1,5 @@
 {
-  "name": "developer-portfolio",
-  "description": "Portfolio of Abu Said",
+  "name": "portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
