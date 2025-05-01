@@ -50,7 +50,7 @@ function Experience() {
                         className="absolute bottom-0 opacity-80"
                       />
                       <div className="flex justify-center">
-                        <p className="text-xs sm:text-sm text-[#16f2b3]">
+                        <p className="text-sm text-[#16f2b3] italic">
                           {experience.duration}
                         </p>
                       </div>
@@ -63,9 +63,20 @@ function Experience() {
                             {experience.title}
                           </p>
                           <p className="text-sm sm:text-base">
-                            {experience.company}
+                            <span className="text-yellow-400">{experience.company}, </span>
+                            <span className="text-green-400">{experience.location}, </span>
+                            <span className="text-sky-400">{experience.role} </span>
                           </p>
                         </div>
+                      </div>
+                      <div>
+                        {experience.descriptions.map((description, index) => (
+                          <p key={index} className="text-xs sm:text-sm">
+                            <span>- </span>
+                            <span className="indent-2">{description}</span>
+                            <br /><br />
+                          </p> 
+                        ))}
                       </div>
                     </div>
                   </GlowCard>
