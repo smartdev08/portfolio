@@ -1,8 +1,9 @@
 "use client"
 
 import { useEffect } from 'react';
+import dynamic from 'next/dynamic'; 
 
-const GlowCard = ({ children , identifier}) => {
+const GlowCard = dynamic(({ children , identifier}) => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const CONTAINER = document.querySelector(`.glow-container-${identifier}`);
@@ -78,6 +79,6 @@ const GlowCard = ({ children , identifier}) => {
       </article>
     </div>
   );
-};
+}, { ssr: false });
 
 export default GlowCard;
