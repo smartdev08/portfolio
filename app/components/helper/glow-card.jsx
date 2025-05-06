@@ -5,7 +5,7 @@ import dynamic from 'next/dynamic';
 
 const GlowCard = dynamic(({ children , identifier}) => {
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof document !== 'undefined') {
       const CONTAINER = document.querySelector(`.glow-container-${identifier}`);
       const CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
 
