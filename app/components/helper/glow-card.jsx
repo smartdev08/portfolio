@@ -3,9 +3,9 @@
 import { useEffect } from 'react';
 import dynamic from 'next/dynamic'; 
 
-const GlowCard = dynamic(({ children , identifier}) => {
+const GlowCard = ({ children , identifier}) => {
   useEffect(() => {
-    if (document) {
+    if (typeof document !== 'undefined') {
       const CONTAINER = document.querySelector(`.glow-container-${identifier}`);
       const CARDS = document.querySelectorAll(`.glow-card-${identifier}`);
 
@@ -79,6 +79,6 @@ const GlowCard = dynamic(({ children , identifier}) => {
       </article>
     </div>
   );
-}, { ssr: false });
+};
 
 export default GlowCard;
